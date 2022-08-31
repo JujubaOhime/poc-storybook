@@ -1,0 +1,13 @@
+import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+
+import { {{pascalCase name}} } from "./{{camelCase name}}";
+
+export default {
+	title: "{{pascalCase folder}}/{{pascalCase name}}",
+	component: {{pascalCase name}},
+} as ComponentMeta<typeof {{pascalCase name}}>;
+
+const Template: ComponentStory<typeof {{pascalCase name}}> = (args) => <{{pascalCase name}} {...args} />;
+
+export const Primary = Template.bind({});
