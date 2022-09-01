@@ -1,0 +1,179 @@
+# Funcionalidades Markdown
+
+É possível utilizar algumas features extras que podem ser bastante útils pra gente 🌟
+
+## Links
+
+É possível utilizar um link tanto como uma url quanto um arquivo que a gente queira
+
+```md
+Vamos ver como [criar um documento](/create-a-page).
+```
+
+```md
+Vamos ver como [criar um documento](./create.md).
+```
+
+Resultado com arquivo: Vamos ver como [criar um documento](./create.md).
+
+## Imagens
+
+Aqui podemos usar tanto um link quanto um arquivo. Nesta opção, podemos usar tanto o caminho da página static quanto na própria pasta onde o documento está contido
+
+Na mesma pasta
+
+```md
+![Docusaurus logo](./img/image.png)
+```
+
+Na pasta static
+
+```md
+![Docusaurus logo](/img/docusaurus.png)
+```
+
+![Docusaurus logo](/img/docusaurus.png)
+
+## Bloco de código
+
+Aqui podemos definir também o formato do arquivo pro highlight ficar correto de acordo com a linguagem usada.
+`html <h1>Eu sou um código html </h1> `
+resultado:
+
+```html
+<h1>Eu sou um código html</h1>
+```
+
+## Avisos
+
+Há uma maneira muito boa visualmente de criar avisos na documentação
+
+```
+:::note
+
+Algum **aviso** com a `sintáxe` _Markdown_. Confira [esta `api`](#).
+
+:::
+
+:::note Sou um note com título personalizado
+
+Algum **aviso** com a `sintáxe` _Markdown_ e título. Confira [esta `api`](#).
+
+:::
+
+:::tip
+
+Algum **aviso** com a `sintáxe` _Markdown_. Confira [esta `api`](#).
+
+:::
+
+:::info
+
+Algum **aviso** com a `sintáxe` _Markdown_. Confira [esta `api`](#).
+
+:::
+
+:::caution
+
+Algum **aviso** com a `sintáxe` _Markdown_. Confira [esta `api`](#).
+
+:::
+
+:::danger
+
+Algum **aviso** com a `sintáxe` _Markdown_. Confira [esta `api`](#).
+
+:::
+```
+
+resultado:
+
+:::note
+
+Algum **aviso** com a `sintáxe` _Markdown_. Confira [esta `api`](#).
+
+:::
+
+:::note Sou um note com título personalizado
+
+Algum **aviso** com a `sintáxe` _Markdown_ e título. Confira [esta `api`](#).
+
+:::
+
+:::tip
+
+Algum **aviso** com a `sintáxe` _Markdown_. Confira [esta `api`](#).
+
+:::
+
+:::info
+
+Algum **aviso** com a `sintáxe` _Markdown_. Confira [esta `api`](#).
+
+:::
+
+:::caution
+
+Algum **aviso** com a `sintáxe` _Markdown_. Confira [esta `api`](#).
+
+:::
+
+:::danger
+
+Algum **aviso** com a `sintáxe` _Markdown_. Confira [esta `api`](#).
+
+:::
+
+## MDX e Componentes React
+
+[MDX](https://mdxjs.com/) pode fazer sua documentação mais **interativa** e te permite usar qualquer componente React
+
+Para usar o componente basta importa-lo ou criar o componente dentro do próprio arquivo como vemos abaixo
+
+```jsx
+import { Highlight } from "./highlight.js";
+```
+
+```jsx
+export const Highlight = ({ children, color }) => (
+	<span
+		style={{
+			backgroundColor: color,
+			borderRadius: "20px",
+			color: "#fff",
+			padding: "10px",
+			cursor: "pointer",
+		}}
+		onClick={() => {
+			alert(`You clicked the color ${color} with label ${children}`);
+		}}
+	>
+		{children}
+	</span>
+);
+
+Isso é um título <Highlight color="#25c2a0">Docusaurus verde</Highlight> !
+
+Isso é um título <Highlight color="#1877F2">Facebook azul</Highlight> !
+```
+
+export const Highlight = ({ children, color }) => (
+	<span
+		style={{
+			backgroundColor: color,
+			borderRadius: "20px",
+			color: "#fff",
+			padding: "10px",
+			cursor: "pointer",
+		}}
+		onClick={() => {
+			alert(`You clicked the color ${color} with label ${children}`);
+		}}
+	>
+		{children}
+	</span>
+);
+
+Isso é um título <Highlight color="#25c2a0">Docusaurus verde</Highlight> !
+
+Isso é um título <Highlight color="#1877F2">Facebook azul</Highlight> !

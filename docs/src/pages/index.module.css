@@ -1,0 +1,102 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.wrapper {
+  min-height: calc(100vh - 60px);
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home :global(.navbar__inner){
+  justify-content: flex-end;
+}
+
+.home :global(.navbar) {
+  background-color: var(--ifm-color-primary-light);
+  border-top: none;
+}
+
+.home :global(.row){
+  padding: 15px
+}
+
+[data-theme='dark'] .home :global(.navbar) {
+  background-color: var(--ifm-color-primary-darker)
+}
+
+.highlightColor {
+  color: var(--ifm-color-primary-light);
+  font-weight: bold;
+} 
+
+[data-theme='dark'] .highlightColor{
+  color: var(--ifm-color-primary-darker)
+}
+
+.insideBrackets {
+  margin-left: 60px;
+}
+
+.imageContainer {
+  width: 350px; 
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.imageContainer img {
+  aspect-ratio: 1/1;
+  padding: 50px;
+  background-color: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] .imageContainer img{
+  background-color: var(--ifm-color-primary-darker);
+}
+
+@media screen and (min-width: 997px){
+  .home :global(.navbar__items:not(.navbar__items--right)) {
+    display: none;
+  }
+
+  .home :global(.navbar__inner) {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 996px){
+  .home :global(.col:first-of-type){
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .home :global(.col:nth-of-type(2) div) {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .imageContainer, .imageContainer img{
+    width: 250px;
+  }
+
+  .home :global(.navbar__brand){
+    display: none;
+  }
+
+  .home :global(.menu__list-item:not(:last-child)){
+    display: none ;
+  }
+}

@@ -1,0 +1,8 @@
+{
+	"label": "Tutoriais",
+	"link": {
+		"slug": "tutorials",
+		"type": "generated-index",
+		"description": "Alguns tutorias que vão facilitar o desenvolvimento"
+	}
+}

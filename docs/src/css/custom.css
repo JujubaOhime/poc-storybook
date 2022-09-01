@@ -1,0 +1,40 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #A881D9;
+  --ifm-color-primary-dark: #9262CC;
+  --ifm-color-primary-darker: #7C43BF;
+  --ifm-color-primary-darkest: #6624B2;
+  --ifm-color-primary-light: #BEA0E5;
+  --ifm-color-primary-lighter: #D4BFF2;
+  --ifm-color-primary-lightest: #EADEFF;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #A881D9;
+  --ifm-color-primary-dark: #9262CC;
+  --ifm-color-primary-darker: #7C43BF;
+  --ifm-color-primary-darkest: #6624B2;
+  --ifm-color-primary-light: #BEA0E5;
+  --ifm-color-primary-lighter: #D4BFF2;
+  --ifm-color-primary-lightest: #EADEFF;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.footer{
+  display: none;
+}
+
+.navbar{
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top: 4px solid var(--ifm-color-primary);
+}

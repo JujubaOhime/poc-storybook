@@ -1,0 +1,29 @@
+amelia:
+    name: Amélia Guerreiro
+    title: Front End Engineer
+    url: https://github.com/jujubaohime
+    image_url: https://github.com/jujubaohime.png
+
+arthur:
+    name: Arthur Ribeiro Dias
+    title: Front End Engineer
+    url: https://github.com/arthur-dias
+    image_url: https://github.com/arthur-dias.png
+
+lary:
+    name: Laryssa Magalhaẽs
+    title: Front End Leader
+    url: https://github.com/laryssamagalhaes
+    image_url: https://github.com/laryssamagalhaes.png
+
+matheus:
+    name: Matheus Francisco
+    title: Front End Engineer
+    url: https://github.com/imtheu
+    image_url: https://github.com/imtheu.png
+
+max:
+    name: Maximiliano Moraes
+    title: Front End Engineer
+    url: https://github.com/moraesmax
+    image_url: https://github.com/moraesmax.png
