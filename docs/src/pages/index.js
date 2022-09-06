@@ -22,7 +22,7 @@ const links = [
 	{
 		emoji: "📁",
 		name: "components",
-		url: "/docs/intro",
+		url: "http://localhost:6006/",
 	},
 ];
 

@@ -1,5 +1,4 @@
 import { styled } from "../../stitches.config";
-
 import { medias } from "../../styles/abstracts/medias";
 
 export const makeButton = (tag: "a" | "button") => {

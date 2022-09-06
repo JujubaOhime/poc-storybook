@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Criando seu arquivo stories
 
 ## Para começar: o que é uma story? 🤔
@@ -58,89 +62,4 @@ Lembrando que o comando do plop é `npm run plop`
 
 No arquivo stories, só mudaremos ele caso queiramos mostrar mais de uma story ou alterar algum controle de props se desejar
 
-## Args e Templates
-Imagina que para cada story precisaríamos sempre ter que passar quase todas as mesmas props de novo e de novo 🥱
-```tsx
-export const Primary = () => <Button backgroundColor="#ff0" size="small" label="Button"  />;
-export const Secondary = () => <Button backgroundColor="#ff0" size="small" label="😄👍😍💯"  />;
-export const Tertiary = () => <Button backgroundColor="#ff0" size="small" label="📚📕📈🤓"  />;
-```
 
-Para resolver esse problema podemos criar um "template" do componente
-```
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
-```
-E reusar o template para cada story
-```tsx
-export const Primary = Template.bind({});
-Primary.args = { backgroundColor: '#ff0', size="small", label: 'Button' };
-
-export const Secondary = Template.bind({});
-Secondary.args = { ...Primary.args, label: '😄👍😍💯' };
-
-export const Tertiary = Template.bind({});
-Tertiary.args = { ...Primary.args, label: '📚📕📈🤓' };
-```
-
-Introduzindo args nas stories do seu componente, você não só reduz a quantidade de código que precisa escrever, como também reduzimos a duplicação de props, como mostrado acima quando usamos spread na Primary story
-
-Além disso podemos importar os args de uma story em outro arquivo stories
-```tsx
-import * as ButtonStories from './Button.stories';
-
-const Template: ComponentStory<typeof ButtonGroup> = (args) => <ButtonGroup {...args} />;
-export const Pair = Template.bind({});
-Pair.args = {
-  buttons: [
-    { ...ButtonStories.Primary.args },
-    { ...ButtonStories.Secondary.args }
-  ],
-  orientation: 'horizontal',
-};
-```
-
-## Definindo args padrão
-
-Caso queiramos que uma props seja padrão para todo stories daquele componente basta passar no export default dessa forma:
-```tsx
-import React from 'react';
-import { ComponentMeta } from '@storybook/react';
-
-import { Button } from './Button';
-
-export default {
-  title: 'Button',
-  component: Button,
-  args: {
-    //👇 Agora todas stories terão primary em suas props
-    primary: true,
-  },
-} as ComponentMeta<typeof Button>;
-```
-
-## Definindo controles personalizados
-
-Digamos que tenha um componente que tenha `backgroundColor` como props e essa é do tipo string.
-Devido backgroundColor ser desse tipo, na hora de mostrar os controles desse componente, será um campo string
-
-![string field](./storybook.png)
-
-Entretanto, é mais interessante que este campo seja um seletor de cor. E para mudar isso basta:
-```tsx
-export default {
-  title: 'Button',
-  component: Button,
-  argsType:{
-    backgroundColor: {
-        control:{
-            type: "color"
-        }
-    }
-  }
-} as ComponentMeta<typeof Button>;
-```
-
-Agora temos um seletor de cor ao invés de um campo string :)
-![color field](./storybook-result.png)
-
-Os controles podem ser redefinidos para quasqueir props e há [uma lista na documentação oficial do Storybook](https://storybook.js.org/docs/react/essentials/controls#annotation) de como mudar tais controles

@@ -9,11 +9,14 @@
 		"lint": "next lint",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"plop": "plop --plopfile ./generators/plopfile.js"
+		"plop": "plop --plopfile ./generators/plopfile.js",
+		"docusaurus": "cd docs/ && npm start",
+		"doc": "concurrently \"npm run docusaurus\" \"npm run storybook\" "
 	},
 	"dependencies": {
 		"@stitches/react": "^1.2.8",
 		"aos": "^3.0.0-beta.6",
+		"concurrently": "^7.3.0",
 		"multiple-themes-stitches": "^0.0.10",
 		"next": "12.2.5",
 		"react": "18.2.0",

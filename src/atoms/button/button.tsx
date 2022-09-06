@@ -125,5 +125,3 @@ export const Button = ({
 		</_button>
 	);
 };
-
-export default Button;
